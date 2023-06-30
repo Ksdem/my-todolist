@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+
+}
+.block{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: solid black;
+}
+.block-input{
+  display: flex;
+  flex-direction: row;
+}
