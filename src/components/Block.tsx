@@ -1,27 +1,30 @@
 import React, {useState} from 'react';
 
 
-type textType={
-
+type textType = {
+    id: number,
+    nameBlock: string,
+    counter:number
 }
 
-function Block(props:textType) {
-    const [inputOne, setInputOne]=useState('')
-    const [text, setText]=useState('')
-    const changeText=(event:any)=>{
-        setInputOne(event.target.value)
+function Block(props: textType) {
+
+
+    const [counter, setCounter]=useState(1)
+
+    const handlerClick = (event:any) => {
+      setCounter(counter+1)
     }
-let onClickText=()=>{
-
-}
-
+    const handlerMouseEnter = (event:any) => {
+        console.log("handlerMouseEnter")
+    }
     return (
         <div className="block">
             <div>Bar</div>
             <div>Block</div>
             <div className="block-input">
-                <input type="text" value={inputOne} onChange={changeText}/>
-                <button onClick={onClickText}>add</button>
+                <input type="text"  />
+                <button title="add" onClick={handlerClick} onMouseEnter={handlerMouseEnter}>add {counter} раз</button>
             </div>
         </div>
     )
