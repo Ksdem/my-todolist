@@ -7,7 +7,7 @@ function App() {
     return (
         <div className="App">
             <div>
-                <Block id={1} nameBlock={"hello"} counter={1}/>
+                <Block id={1} nameBlock={"hello"}/>
             </div>
         </div>
     );

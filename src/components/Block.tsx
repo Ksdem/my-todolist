@@ -1,31 +1,47 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 
 
 type textType = {
     id: number,
     nameBlock: string,
-    counter:number
+
 }
 
 function Block(props: textType) {
 
 
-    const [counter, setCounter]=useState(1)
+    const [firstName, setFirstName] = useState('');
+    const [items, setItems] = useState(['a', 'b']);
+    const nameField = useRef<HTMLInputElement>(null);
 
-    const handlerClick = (event:any) => {
-      setCounter(counter+1)
+
+    const onSetCounter = () => {
+        setItems(prevState => {
+            return [...prevState, firstName]
+        })
+        setFirstName("");
+       if(nameField && nameField.current)
+           nameField.current.focus();
     }
-    const handlerMouseEnter = (event:any) => {
-        console.log("handlerMouseEnter")
-    }
+
+
+
     return (
         <div className="block">
-            <div>Bar</div>
-            <div>Block</div>
+           {/* <div>Bar</div>
+            <div>Block</div>*/}
+            {items.map((value, index) => {
+                return <div key={index}>{value}</div>
+            })}
             <div className="block-input">
-                <input type="text"  />
-                <button title="add" onClick={handlerClick} onMouseEnter={handlerMouseEnter}>add {counter} раз</button>
+                <input placeholder="enter your text" ref={nameField} value={firstName} onChange={e => setFirstName(e.target.value)}/>
+
+                <button onClick={onSetCounter}>add
+                </button>
+
             </div>
+
+
         </div>
     )
 }
