@@ -4,13 +4,31 @@
   padding: 30px;
 
 }
-.block{
+
+.block {
   display: flex;
   flex-direction: column;
   padding: 15px;
   border: solid black;
 }
-.block-input{
+
+.block-input {
   display: flex;
   flex-direction: row;
+}
+
+.form {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  flex-flow: row;
+
+  .button {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    flex-grow: 1;
+
+
+  }
 }

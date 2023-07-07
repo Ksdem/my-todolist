@@ -16,10 +16,6 @@ function Block() {
         }
     }, []);
 
-    // useEffect(() => {
-    //     localStorage.setItem('items', JSON.stringify(items));
-    // }, [items]);
-
 
     const onSetCounter = () => {
         setItems(prevState => {
@@ -42,7 +38,7 @@ function Block() {
             })}
             <div className="block-input">
                 <input placeholder="enter your text" ref={nameField} value={firstName}
-                       onChange={e => setFirstName(e.target.value)}/>
+                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value)}/>
 
                 <button onClick={onSetCounter}>add
                 </button>

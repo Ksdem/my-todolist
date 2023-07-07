@@ -1,13 +1,15 @@
 import React from 'react';
 
 import './App.scss';
-import Block from "./components/Block";
+
+import NewTodo from "./components/NewTodo";
 
 function App() {
     return (
         <div className="App">
             <div>
-                <Block />
+               {/* <Block />*/}
+                <NewTodo/>
             </div>
         </div>
     );
