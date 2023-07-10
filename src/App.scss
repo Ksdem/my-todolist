@@ -19,12 +19,13 @@
 
 .form {
   display: flex;
-  width: 30px;
-  height: 30px;
+  flex-direction: column;
+  flex-grow: inherit;
   flex-flow: row;
 
   .button {
     display: flex;
+
     width: 30px;
     height: 30px;
     flex-grow: 1;
